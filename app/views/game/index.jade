@@ -1,16 +1,23 @@
 extends ../shared/template
 
 block content
-  h1 Builder
-
-  form
-    input(type='text', name='username', autofocus=true, placeholder='Username')
-    .button#login Login
   #username
 
-  button#seed Plant Seed
-  button#getforest Get Forest
-  
+
+  .controls
+    button.button.button-action#seed Plant Seed
+    button.button.button-action#getforest Get Forest
+    table
+      tbody
+        tr
+          td  Wood:
+          td#wood 0
+          td  Money:
+          td#cash 0
+    .sell
+      input#sell(type='text', name='sell', placeholder='Qty')
+      button.button.button-highlight Sell Wood
+
   #forest
 
 block scripts

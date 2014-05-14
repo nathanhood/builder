@@ -71,3 +71,29 @@ exports.grow = (req, res)=>{
     // }
   });
 };
+
+
+exports.chop = (req, res)=>{
+  var treeId = Mongo.ObjectID(req.params.treeId);
+  console.log('---------'+treeId+'----------');
+  trees.findOne({_id:treeId}, (err, tree)=>{
+    console.log('---------'+tree+'----------');
+    if(tree.isHealthy === true && tree.isChopped === false){
+      tree.isHealthy = false;
+      tree.isChopped = true;
+      tree.height = 0;
+
+      users.findOne({_id:tree.userId}, (err, user)=>{
+        console.log('---------'+user+'----------');
+        user.wood = tree.height/2;
+
+        trees.save(tree, (err, obj)=>{
+          users.save(user, (err, updatedUser)=>{
+            console.log('---------'+updatedUser+'----------');
+            res.send(user, tree);
+          });
+        });
+      });
+    }
+  });
+};

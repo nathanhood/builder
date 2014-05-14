@@ -10,10 +10,29 @@
     $('#seed').click(seed);
     $('#getforest').click(getForest);
     $('#forest').on('click', '.tree.alive', grow);//only trees with class 'alive' can be clicked
+    $('#forest').on('click', ':button#chop', chop);
+  }
+
+  function chop(){
+
+    var treeId = $(this).closest('.tree').data('id');
+    var tree = $(this).closest('.tree');
+
+    $.ajax({
+      url: `/tree/${treeId}/chop`,
+      type: 'PUT',
+      dataType: 'html',
+      success: user => {
+        // $('#wood').text(user.wood);
+        // $(tree[0]).removeClass('adult alive').addClass('chopped');
+        console.log(user);
+        debugger;
+      }
+    });
   }
 
   function grow(){
-    var tree = $(this);//allows us to retrieve 'this' at this particular moment
+    var tree = $(this);//allows us to retrieve 'this' at a particular moment
     var treeId = $(this).data('id');
 
     $.ajax({
@@ -63,7 +82,7 @@
       success: r => {
         $('#login').prev().val('');
         $('#username').attr('data-id', r._id);//inserting _id of username object as attribute
-        $('#username').text(r.username);
+        $('#username').text(`Welcome ${r.username}!`);
         console.log(r);
       }
     });

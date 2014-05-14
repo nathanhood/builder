@@ -10,23 +10,133 @@ body {
 }
 
 nav {
-  text-align: center;
   padding-top: 15px;
 }
 
 nav .button {
+  margin: 0 15px;
+}
+
+nav h1 {
+  float: left;
+  display: inline-block;
+  margin-left: 25px;
+  margin-right: 50px;
+  margin-top: 0;
+}
+
+#forest {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login {
+  margin-right: 20px;
+  float: right;
+  font-size: .8em;
+}
+
+.login .button {
+  margin-left: 10px;
+  padding: 0 5px;
+}
+
+.login form {
+  display: inline-block;
+}
+
+#username {
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 15px;
+  vertical-align: top;
+  float: right;
+}
+
+.controls {
+  margin-top: 30px;
+  margin-left: 30px;
+  max-width: 1200px;
+}
+
+.sell {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.sell input {
+  width: 100px;
+}
+
+.controls .button {
   margin: 0 10px;
 }
 
+table {
+  display: inline-block;
+  margin-left: 110px;
+  vertical-align: bottom;
+}
+
+table td {
+  font-size: 2em;
+}
+
+#wood, #cash {
+  min-width: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .tree {
-  width: 160px;
-  height: 308px;
-  background-size: cover;
+  width: 120px;
+  height: 250px;
+  background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
-  margin: 10px;
   border: 2px solid black;
+  margin: 10px;
 }
+
+.buttons {
+  width: 124px;
+  height: 40px;
+  // border: 2px solid black;
+}
+
+// .container {
+//   display: inline-block;
+//   margin: 10px;
+// }
+
+.height {
+  display: inline-block;
+  margin-left: 10px;
+  // border: 1px solid black;
+  padding: 5px 5px;
+  position: relative;
+  top: 88%;
+  font-weight: 600;
+  font-size: larger;
+}
+
+// #chop, #grow {
+//   width: 100%;
+//   height: 100%;
+// }
+
+#chop {
+  background-color: #85c925;
+  float: left;
+  position: relative;
+  top: 88%;
+  left: 10px;
+}
+
+// #grow {
+//   background-color: #375cb6;
+// }
 
 .seed {
   background-image:url('../img/seed.png');
@@ -45,5 +155,9 @@ nav .button {
 }
 
 .dead {
-  background-image:url('../img/dead.png');
+  background-image:url('../img/deadtree.png');
+}
+
+.chopped {
+  background-image:url('../img/tree_stump.png');
 }

@@ -25,6 +25,7 @@ function load(app, fn){
   app.post('/seed', dbg, game.seed);
   app.get('/forest/:userId', dbg, game.forest);
   app.put('/tree/:treeId/grow', dbg, game.grow);
+  app.put('/tree/:treeId/chop', dbg, game.chop);
 
   console.log('Routes Loaded');
   fn();

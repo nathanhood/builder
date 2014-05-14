@@ -8,8 +8,15 @@ html
     link(href='/less/app.css', rel='stylesheet')
   body
     nav
-      a.button(href='/help') Help
-      a.button(href='/game') Game
+      h1 Builder
+      a.button.button-border(href='/game') Game
+      a.button.button-border(href='/help') Help
+
+      .login
+        form
+          input(type='text', name='username', autofocus=true, placeholder='Username')
+          .button#login Login
+
     block content
 
     script(src='/js/vendor/jquery-2.1.1.js')
